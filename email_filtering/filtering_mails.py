@@ -23,6 +23,7 @@ def retrieve_emails(emails):
                 print(mails)
                 result,data=mail.search(None,"FROM",mails)
                 if result=="OK":
+                    print(result,data)
                     for num in data[0].split():
                         result, email_data= mail.fetch(num,'(RFC822')
                         raw_msg=email_data[0][1]
