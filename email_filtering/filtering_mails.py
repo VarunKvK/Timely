@@ -6,15 +6,16 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-email_list = []
+
 def read_email_list_to_monitor(email_csv):
     with open(email_csv, "r") as email:
+        email_list=[]
         reader=csv.reader(email)
         for row in reader:
             email_list.append(row)
-    return(email_list)
+    return email_list
 
-def retrieve_emails():
+def retrieve_emails(email_list):
     try:
         mail=im.IMAP4_SSL('imap.gmail.com')
         mail.login(os.getenv('EMAIL_SECONDARY'),os.getenv('PASSWORD_SECONDARY'))
@@ -22,6 +23,7 @@ def retrieve_emails():
         mail.select('inbox')
         
         for mails in email_list:
+            print(mails)
             result,data= mail.search(None,"FROM",mails)
             if result=="OK":
                 for num in data[0].split():
