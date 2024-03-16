@@ -13,25 +13,39 @@ def read_email_list_to_monitor(email_csv):
 
 def retrieve_emails(emails):
     try:
-        mail=im.IMAP4_SSL('imap.gmail.com')
-        mail.login(os.getenv('EMAIL_SECONDARY'),os.getenv('PASSWORD_SECONDARY'))
+        mail = im.IMAP4_SSL('imap.gmail.com')
+        mail.login(os.getenv('EMAIL_SECONDARY'), os.getenv('PASSWORD_SECONDARY'))
         
         mail.select('inbox')
-        # print(emails)
-        for mails in emails:
+        
+        for email_address in emails:
             try:
-                print(mails)
-                result,data=mail.search(None,"FROM",mails)
-                if result=="OK":
-                    print(result,data)
+                print(f"Searching for emails from: {email_address}")
+                result, data = mail.search(None, "FROM", email_address)
+                if result == "OK":
                     for num in data[0].split():
-                        result, email_data= mail.fetch(num,'(RFC822')
-                        raw_msg=email_data[0][1]
-                        msg=email.message_from_bytes(raw_msg)
-                        sender=msg["From"]
-                        print(sender)
+                        print(f"Fetching email with UID: {num}")
+                        result, email_data = mail.fetch(num, '(RFC822)')
+                        raw_msg = email_data[0][1]
+                        msg = email.message_from_bytes(raw_msg)
+                        sender = msg["From"]
+                        if sender == email_address:
+                            print(f"Found email from: {email_address}")
+                            email_contents = []  # List to store the content of each email
+                            if msg.is_multipart():
+                                for msg_part in msg.walk():
+                                    content_type = msg_part.get_content_type()
+                                    if content_type == "text/plain" or content_type== "text/html":
+                                        email_contents.append(msg_part.get_payload(decode=True).decode("utf-8"))
+                            print("Email content:")
+                            for content in email_contents:
+                                print(content)
+                            print()
+                        else:
+                            print(f"Failed to fetch email with UID: {num}")
+                            
             except Exception as e:
-                print(f"The particular {mails} doesn't exists so skipping it and continue .....")
+                print(f"Error occurred while processing email from {email_address}: {e}")
                 continue                                            
                      
     except Exception as e:
@@ -41,4 +55,3 @@ def retrieve_emails(emails):
         # Close the connection
         mail.close()
         mail.logout()
-    
