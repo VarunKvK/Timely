@@ -1,3 +1,18 @@
+filter_keywords = [
+    "Filter","Organize","Arrange","Sort","CSV parsing","Email sorting","Data extraction",
+    "CSV manipulation","Email categorization","CSV filtering","Email organization","Data processing",
+    "CSV analysis","Email management","Data filtering","CSV handling","Email parsing",
+    "Data manipulation","CSV sorting","Email extraction","Data parsing","CSV organization","Data organization"
+]
+
+send_keywords = [
+    "Email","Send","Communicate","Outreach","Communication","Correspondence","Contact","Engagement","Interaction","Messaging","Message",
+    "Connection","Connect","Relationship","Relation",
+    "Send emails","Email clients","Communicate with clients","Client outreach","Email communication","Client correspondence",
+    "Client contact","Client engagement","Client interaction","Client communication","Client messaging","Client connection",
+    "Client relationship management","Dispatch emails","Message clients","Reach out to clients","Contact clients","Email outreach"]
+
+
 follow_up_words = [
     "Check-in", "Follow-through", "Subsequent", "Continuation", "Progress", 
     "Update", "Pursue", "Engagement", "Connection", "Feedback", "Communication", 
@@ -58,4 +73,5 @@ thank_you_email_words = [
     "Appreciation", "Recognition", "Thanksgiving", "Honoring", "Praising",
     "Commending", "Gratefulness", "Thankfulness", "Appreciativeness", "Recognition"
 ]
+
 
