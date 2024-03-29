@@ -22,7 +22,18 @@ def read_email_list_to_monitor(email_csv):
 #         email.to_csv(email_csv,index=False)    
 #     except Exception as e:
 #         print("An error occurred:", e)
+
+
+
+def prompt_number_of_mails():
+    try:
+        count=int(input("Enter the number of emails you want to send(Maximum is 100)? \n\n"))
+        return count
+    except Exception as e:
+        print("An error occurred:", e)
         
+
+
 def validate_email_file(email_folder,email_type):
     try:
         folder=""
@@ -35,7 +46,7 @@ def validate_email_file(email_folder,email_type):
         else:
             print("Invalid email type")
         
-        email_file=input("Enter the filename of the email: ").capitalize()
+        email_file=input("Enter the filename of the email: \n\n").capitalize()
         if not email_file.endswith(".txt"):
             email_file+= ".txt"
             file_destination=f"{folder}/{email_folder}/{email_file}"
@@ -47,12 +58,17 @@ def validate_email_file(email_folder,email_type):
     except Exception as e:
         print("An error occurred:", e)
 
+
+
+
 def parse_email_file(email_file):
     print(email_file)
     with open(email_file, "r") as file:
         email=file.read()
         subject, _, message=email.partition("\n\n")
     return subject, message
+
+
 
 def select_email_template(subject,message,email_type,followup,new_email,thank_email):
     try:
@@ -72,6 +88,8 @@ def select_email_template(subject,message,email_type,followup,new_email,thank_em
         print("An error occurred:", e)
     
     return sub,body
+
+
 
 def send_email_to_list(email_list,sub,body):
     try:

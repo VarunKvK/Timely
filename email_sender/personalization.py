@@ -21,6 +21,6 @@ def extract_username(email):
 
 def personalize_email(template,username):
     for user in username:
-        personalize_email_template=template.replace("[Client's Name]",user)
+        personalize_email_template=template.replace("[Client's Name]",user.capitalize())
         sender_personalise_email=personalize_email_template.replace("[Your Name]",os.getenv("SENDER"))
     return sender_personalise_email
