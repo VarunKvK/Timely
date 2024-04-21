@@ -1,10 +1,9 @@
 import React from "react";
-import Navbar from "../components/navbar";
 import { Link } from "react-router-dom";
 function Home() {
   return (
-    <div className="2xl:h-[92vh] xl:h-[88vh] lg:h-[88vh] md:h-[86vh] sm:h-[90vh] h-[86vh] w-full pl-4 pr-4">
-      <div className="bgcolor 2xl:h-full xl:h-[88vh] lg:h-[88vh] md:h-[86vh] sm:h-[85vh] h-[86vh] rounded-2xl flex items-center justify-center">
+    <div className="2xl:h-[92vh] xl:h-[88vh] lg:h-[88vh] md:h-[86vh] sm:h-[80vh] h-[86vh] w-full pl-4 pr-4">
+      <div className="bgcolor 2xl:h-full xl:h-[88vh] lg:h-[88vh] md:h-[87vh] sm:h-[85vh] h-[86vh] rounded-2xl flex items-center justify-center">
         <div className="">
           <div className="flex items-center justify-center">
             <h1 className="text-[40px] 2xl:text-[90px] xl:text-[70px] lg:text-[65px] md:text-[55px] sm:text-[55px] font-medium text-center xl:w-[60%] lg:w-[80%] md:w-[75%] sm:w-[75%] w-full text-white 2xl:leading-[6rem] xl:leading-[5.5rem] lg:leading-[5rem] md:leading-[3.5rem] sm:leading-[4rem] leading-[2.4rem]">
