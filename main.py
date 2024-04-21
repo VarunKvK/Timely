@@ -2,8 +2,14 @@ from email_filtering import filtering_mails
 from email_sender import send_emails,personalization
 from email_keywords.keyword_list import follow_up_words,email_client_words,thank_you_email_words,send_keywords,filter_keywords
 def main():
+<<<<<<< HEAD
 #CSV File
     csvfile="./emails/email_monitoring.csv"
+=======
+    email="./emails/email_monitoring copy.csv"
+    email_list=filtering_mails.read_email_list_to_monitor(email)
+    filtering_mails.retrieve_emails(email_list)
+>>>>>>> master
     
     automate_task=input("What task do you want to automate?\n 1) Filter Emails through an csv file 2) Send emails to clients \n Output: \n\n")
     
