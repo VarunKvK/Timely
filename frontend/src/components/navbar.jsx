@@ -17,7 +17,7 @@ function Navbar() {
           <Link className="py-2 px-6 rounded-lg border-[1px] border-[#FFF] cursor-pointer">
             template
           </Link>
-          <Link className="py-2 px-6 rounded-lg bg-[#FFF] text-[#0E0E0E] cursor-pointer">
+          <Link to="/schedule" className="py-2 px-6 rounded-lg bg-[#FFF] text-[#0E0E0E] cursor-pointer">
             schedule
           </Link>
         </div>
@@ -27,7 +27,7 @@ function Navbar() {
       <div className="md:hidden absolute bg-white h-auto w-full p-8 pb-10 z-50 transition-all duration-75 ease-in-out">
         <div className="grid gap-8">
           <Link className="text-[2rem] cursor-pointer">template</Link>
-          <Link className="text-[2rem] cursor-pointer">schedule</Link>
+          <Link to="/schedule" className="text-[2rem] cursor-pointer">schedule</Link>
         </div>
       </div>
       <div

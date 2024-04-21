@@ -20,7 +20,7 @@ function Home() {
           </div>
           <div className="flex justify-evenly items-center">
             <div className="flex 2xl:gap-12 gap-4 pt-4 2xl:pt- xl:pt-8 lg:pt-[1.5rem]">
-              <Link className="2xl:py-4 2xl:px-10 py-2 px-6 font-medium 2xl:text-[20px] xl:text-[17px] lg:text-[15px] md:text-[12px] sm:text-[12px] text-[12px] 2xl:rounded-2xl rounded-lg bg-[#FFF] text-[#0E0E0E] cursor-pointer flex items-center">
+              <Link to="/schedule" className="2xl:py-4 2xl:px-10 py-2 px-6 font-medium 2xl:text-[20px] xl:text-[17px] lg:text-[15px] md:text-[12px] sm:text-[12px] text-[12px] 2xl:rounded-2xl rounded-lg bg-[#FFF] text-[#0E0E0E] cursor-pointer flex items-center">
                 Schedule Emails
               </Link>
               <Link className="2xl:py-4 2xl:px-10 py-2 px-6 2xl:rounded-2xl rounded-lg font-medium 2xl:text-[20px] xl:text-[17px] lg:text-[15px] md:text-[12px] sm:text-[12px] text-[12px] border-[1px] border-[#FFF] text-white cursor-pointer flex items-center">

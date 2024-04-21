@@ -15,3 +15,30 @@ body {
     rgba(247, 183, 51, 1) 100%
   );
 }
+
+.text-color {
+  background: linear-gradient(
+    300deg,
+    rgba(252, 74, 26, 1) 20%,
+    rgba(247, 183, 51, 1) 100%
+  );
+  -webkit-background-clip: text; 
+  background-clip: text;
+  color: transparent;
+}
+
+.custom-input {
+  border: none; 
+  outline: none;
+  border-bottom: 1px solid #fff; 
+  background-color: transparent; 
+  color: #fff; 
+  font-size: 1rem;
+  padding: 8px 0; 
+  width: 100%; 
+}
+
+.custom-input::placeholder {
+  color: #fff;
+  opacity: 0.5;
+}
